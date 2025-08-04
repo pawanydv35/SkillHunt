@@ -7,6 +7,7 @@ export default function navbar() {
         <ul>Find Jobs</ul>
         <ul>Messages</ul>
         <ul>Hiring</ul>
+        <ul>Community</ul>
         <ul>FAQs</ul>
        </li>
        
