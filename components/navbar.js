@@ -1,72 +1,55 @@
+// components/Navbar.js
 'use client';
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { Bell, Settings, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function navbar() {
   return (
-    <nav className="bg-white shadow-md fixed top-0 w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link href="/" className="text-xl font-bold text-blue-600">
-              SkillHunt
-            </Link>
-          </div>
+    <nav className="bg-black text-white px-6 py-3 w-full shadow-md flex items-center justify-between">
+      {/* Left: Logo + Menu */}
+      <div className="flex items-center space-x-10">
+        {/* Logo */}
+        <Link href="/" className="flex items-center space-x-2 text-white font-semibold text-lg">
+          <span className="bg-white rounded-full w-5 h-5 block"></span> {/* Placeholder for logo icon */}
+          <span>LuckyJob</span>
+        </Link>
 
-          {/* Hamburger Menu (Mobile) */}
-          <div className="flex items-center md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-800 focus:outline-none"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
-
-          {/* Nav Links */}
-          <div className="hidden md:flex md:items-center space-x-6">
-            <Link href="/" className="text-gray-700 hover:text-blue-600">Home</Link>
-            <Link href="/jobs" className="text-gray-700 hover:text-blue-600">Jobs</Link>
-            <Link href="/about" className="text-gray-700 hover:text-blue-600">About</Link>
-            <Link href="/contact" className="text-gray-700 hover:text-blue-600">Contact</Link>
-          </div>
+        {/* Menu Items */}
+        <div className="hidden md:flex space-x-6 text-sm font-medium">
+          <Link href="#" className="hover:text-gray-300 border-b-2 border-white pb-1">Find job</Link>
+          <Link href="#" className="hover:text-gray-300">Messages</Link>
+          <Link href="#" className="hover:text-gray-300">Hiring</Link>
+          <Link href="#" className="hover:text-gray-300">Community</Link>
+          <Link href="#" className="hover:text-gray-300">FAQ</Link>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white px-4 pb-4">
-          <Link href="/" className="block py-2 text-gray-700 hover:text-blue-600">Home</Link>
-          <Link href="/jobs" className="block py-2 text-gray-700 hover:text-blue-600">Jobs</Link>
-          <Link href="/about" className="block py-2 text-gray-700 hover:text-blue-600">About</Link>
-          <Link href="/contact" className="block py-2 text-gray-700 hover:text-blue-600">Contact</Link>
+      {/* Right: Location + Icons */}
+      <div className="flex items-center space-x-4">
+        {/* Location */}
+        <div className="hidden md:flex items-center text-sm text-gray-300 space-x-1">
+          <MapPin size={16} />
+          <span>New York, NY</span>
         </div>
-      )}
+
+        {/* Profile */}
+        <Image
+          src="/avatar.jpg" // Put your avatar image in public/avatar.jpg
+          alt="User"
+          width={32}
+          height={32}
+          className="rounded-full border border-gray-600"
+        />
+
+        {/* Settings Icon */}
+        <Settings className="w-5 h-5 hover:text-gray-400 cursor-pointer" />
+
+        {/* Notification Icon */}
+        <Bell className="w-5 h-5 hover:text-gray-400 cursor-pointer" />
+      </div>
     </nav>
   );
 }
