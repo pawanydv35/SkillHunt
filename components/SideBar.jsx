@@ -1,8 +1,8 @@
-'use clinet';
+"use client";
 
 import { useState } from "react";
 
-export default function Sidebar() {
+export default function SideBar() {
   const [workingSchedule] = useState([
     { label: "Full time", checked: true },
     { label: "Part time", checked: true },

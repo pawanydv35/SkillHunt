@@ -1,6 +1,5 @@
-import Navbar from "@/components/Navbar";
-import Sidebar from "@/components/Sidebar";
 import JobCard from "@/components/JobCard";
+import SideBar from "@/components/SideBar";
 import { FiSettings } from "react-icons/fi";
 
 export default function Home() {
@@ -70,7 +69,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 p-6 flex gap-6">
       {/* Sidebar */}
-      <Sidebar />
+      <SideBar />
 
       {/* Jobs Section */}
       <main className="flex-1">
