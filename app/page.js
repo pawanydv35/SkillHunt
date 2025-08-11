@@ -1,5 +1,5 @@
 import Image from "next/image";
-import navbar from '@/components/navbar';
+import Navbar from '@/components/Navbar';
 import JobCard from '@/components/JobCard';
 
 const jobs = [

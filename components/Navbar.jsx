@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Bell, Settings, MapPin } from 'lucide-react';
 
-export default function navbar() {
+export default function Navbar() {
   return (
     <nav className="bg-black text-white fixed top-0 w-full z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
