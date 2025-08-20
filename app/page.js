@@ -2,6 +2,7 @@ import JobCard from "@/components/JobCard";
 import SideBar from "@/components/SideBar";
 import { FiSettings } from "react-icons/fi";
 
+
 export default function Home() {
   const jobs = [
     {
@@ -96,6 +97,7 @@ export default function Home() {
           ))}
         </div>
       </main>
+        <LoginForm />
     </div>
   );
 }
